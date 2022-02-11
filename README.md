@@ -1,12 +1,12 @@
 ##Ejercicios sesiones 7, 8 y 9
 
 
-1. Completar metodos CRUD en LaptopController. :white_check_mark:
-   1. findAll :heavy_check_mark:
-   2. findOneById :heavy_check_box:
-   3. create :heavy_check_mark:
-   4. update :white_check_mark:
-   5. delete :white_check_mark:
+1. Completar metodos CRUD en LaptopController. :heavy_check_mark:
+   1. findAll :white_check_mark:
+   2. findOneById :white_check_mark:
+   3. create :white_check_mark:
+   4. update :x:
+   5. delete :x:
    6. deleteAll :x:
    
 
