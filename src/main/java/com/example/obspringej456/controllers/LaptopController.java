@@ -3,12 +3,10 @@ package com.example.obspringej456.controllers;
 import com.example.obspringej456.entities.Laptop;
 import com.example.obspringej456.repositories.LaptopRepository;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Objects;
 import java.util.Optional;
 
 @RestController
@@ -48,9 +46,65 @@ public class LaptopController {
     // añadir un portatil
     @PostMapping("/api/laptops")
     public ResponseEntity<Laptop> create(@RequestBody Laptop laptop){
+        if(laptop.getId() != null){
+            return ResponseEntity.badRequest().build();
+        }
+
         Laptop newLaptop = laptop;
         repo.save(newLaptop);
         return ResponseEntity.ok(newLaptop);
     }
 
+    // actualizar un portatil
+
+    @PutMapping("/api/laptops/{id}")
+    public ResponseEntity<Laptop> update(@PathVariable Long id, @RequestBody Laptop toUpdateLaptop){
+        // comprobamos que la petición se ha hecho con un id correcto, y que existe un portatil con ese id.
+        if(id <= 0){
+            return ResponseEntity.badRequest().build();
+        }
+        if(!repo.existsById(id)){
+            return  ResponseEntity.notFound().build();
+        }
+        // comprobamos que no se ha especificado el id en el cuerpo de la peticion, y que si se ha especificado
+        // este coincide con el id de la url.
+        if(toUpdateLaptop.getId() == null){
+            toUpdateLaptop.setId(id);
+        }
+        if(!Objects.equals(toUpdateLaptop.getId(), id)){
+            return ResponseEntity.badRequest().build();
+        } else {
+            // Una vez comprobamos que ambos id coinciden, guardamos la nueva version del objeto y devolvemos el nuevo
+            // objeto y estado 200.
+            repo.save(toUpdateLaptop);
+            return ResponseEntity.ok(toUpdateLaptop);
+        }
+    }
+
+    // Implementación del método delete para borrar un portatil por id
+    @DeleteMapping("/api/laptops/{id}")
+    public ResponseEntity<Laptop> delete(@PathVariable Long id){
+        if(id < 0){
+            return ResponseEntity.badRequest().build();
+        }
+        if(!repo.existsById(id)){
+            return  ResponseEntity.notFound().build();
+        }
+
+        repo.deleteById(id);
+        return ResponseEntity.noContent().build();
+    }
+
+    // Implementación del metodo deleteAll para borrar todos los portatiles
+    @DeleteMapping("/api/laptops")
+    public ResponseEntity<Laptop> deleteAll(){
+        if(repo.count() == 0){
+            return ResponseEntity.badRequest().build();
+        } else {
+            repo.deleteAll();
+            return ResponseEntity.noContent().build();
+        }
+
+
+    }
 }
