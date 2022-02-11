@@ -7,11 +7,11 @@
    3. create :heavy_check_mark:
    4. update :white_check_mark:
    5. delete :white_check_mark:
-   6. deleteAll :white_check_mark:
+   6. deleteAll :x:
    
 
-2. Documentar la API REST con Swagger. :white_check_mark:
+2. Documentar la API REST con Swagger. :x:
    - Swagger UI url: http://localhost:8081/swagger-ui/
 
 
-3. Testear LaptopController.:white_check_mark:
+3. Testear LaptopController. :x:
