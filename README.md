@@ -10,7 +10,7 @@
    6. deleteAll :white_check_mark:
    
 
-2. Documentar la API REST con Swagger. :x:
+2. Documentar la API REST con Swagger. :white_check_mark:
    - Swagger UI url: http://localhost:8081/swagger-ui/
 
 
