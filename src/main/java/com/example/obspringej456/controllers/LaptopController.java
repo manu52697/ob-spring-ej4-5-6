@@ -1,7 +1,7 @@
-package com.example.obspringej567.controllers;
+package com.example.obspringej456.controllers;
 
-import com.example.obspringej567.entities.Laptop;
-import com.example.obspringej567.repositories.LaptopRepository;
+import com.example.obspringej456.entities.Laptop;
+import com.example.obspringej456.repositories.LaptopRepository;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;

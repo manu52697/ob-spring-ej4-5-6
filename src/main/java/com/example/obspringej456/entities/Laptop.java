@@ -1,4 +1,4 @@
-package com.example.obspringej567.entities;
+package com.example.obspringej456.entities;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;

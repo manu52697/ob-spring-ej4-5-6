@@ -1,8 +1,8 @@
-package com.example.obspringej567;
+package com.example.obspringej456;
 
 
-import com.example.obspringej567.entities.Laptop;
-import com.example.obspringej567.repositories.LaptopRepository;
+import com.example.obspringej456.entities.Laptop;
+import com.example.obspringej456.repositories.LaptopRepository;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;

@@ -1,4 +1,4 @@
-package com.example.obspringej567.controllers;
+package com.example.obspringej456.controllers;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
