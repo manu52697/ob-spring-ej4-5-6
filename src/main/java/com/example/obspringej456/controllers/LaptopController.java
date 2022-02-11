@@ -35,7 +35,7 @@ public class LaptopController {
 
     // recuperar un portatil segun el id
     @GetMapping("/api/laptops/{id}")
-    public ResponseEntity<Laptop> findById(@RequestBody Long id){
+    public ResponseEntity<Laptop> findById(@PathVariable Long id){
         Optional<Laptop> laptop = repo.findById(id);
         if(laptop.isPresent())
             return ResponseEntity.ok(laptop.get());
@@ -87,12 +87,13 @@ public class LaptopController {
         if(id < 0){
             return ResponseEntity.badRequest().build();
         }
-        if(!repo.existsById(id)){
-            return  ResponseEntity.notFound().build();
+        if(repo.existsById(id)){
+            repo.deleteById(id);
+            return  ResponseEntity.noContent().build();
         }
 
-        repo.deleteById(id);
-        return ResponseEntity.noContent().build();
+
+        return ResponseEntity.notFound().build();
     }
 
     // Implementación del metodo deleteAll para borrar todos los portatiles

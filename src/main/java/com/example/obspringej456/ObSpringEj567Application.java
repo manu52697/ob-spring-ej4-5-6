@@ -17,7 +17,15 @@ public class ObSpringEj567Application {
 
 		ApplicationContext context = SpringApplication.run(ObSpringEj567Application.class, args);
 
-		populateDb(context);
+		//populateDb(context);
+
+		LaptopRepository repo = (LaptopRepository) context.getBean("laptopRepository");
+
+		Laptop mockLaptop = new Laptop(null, "Inspiron 14000", "Dell", LocalDate.now(),16,"Win11");
+		repo.save(mockLaptop);
+		mockLaptop = new Laptop(null,"2450", "HP", LocalDate.of(2008,3,1),4,"Win10");
+		repo.save(mockLaptop);
+
 	}
 
 	public static void populateDb(ApplicationContext ctx){
