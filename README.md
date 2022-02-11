@@ -14,4 +14,4 @@
    - Swagger UI url: http://localhost:8081/swagger-ui/
 
 
-3. Testear LaptopController. :x:
+3. Testear LaptopController. :white_check_mark:
