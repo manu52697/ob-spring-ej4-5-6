@@ -1,7 +1,6 @@
 package com.example.obspringej456.controllers;
 
 import com.example.obspringej456.entities.Laptop;
-import jdk.jshell.spi.ExecutionControl;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,11 +9,8 @@ import org.springframework.boot.test.web.client.TestRestTemplate;
 import org.springframework.boot.web.client.RestTemplateBuilder;
 import org.springframework.boot.web.server.LocalServerPort;
 import org.springframework.http.*;
-import org.springframework.test.context.event.annotation.BeforeTestMethod;
 
-import java.awt.print.Book;
 import java.util.List;
-import java.util.Optional;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
@@ -78,6 +74,7 @@ public class LaptopControllerTest {
                 "/api/laptops",HttpMethod.POST,
                 request, Laptop.class);
         Laptop responseBody = response.getBody();
+        assertEquals(response.getStatusCode(), HttpStatus.OK);
         assertEquals(responseBody.getManufacturer(),"TestManufacturer");
         assertNotNull(responseBody.getId());
         assertEquals(responseBody.getModel(),"TestModel");
@@ -135,10 +132,10 @@ public class LaptopControllerTest {
                 "/api/laptops",HttpMethod.POST,
                 request, Laptop.class);
         Laptop responseBody = response.getBody();
-        assertNotNull(responseBody.getId());
+        //assertNotNull(responseBody.getId());
         Long testID = responseBody.getId();
 
-        String testURL = "/api/laptops/" + testID;
+        String testURL = "/api/laptops/3" + testID;
         System.out.println(testID);
 
         // Test a correct request
