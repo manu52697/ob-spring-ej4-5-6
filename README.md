@@ -3,10 +3,14 @@
 1. Empaquetar con maven y ejecutar desde consola :heavy_check_mark:
    * Perfiles para test y dev :heavy_check_mark:
 
-2. Desplegar el API REST en Heroku   
-   * URL:
+2. Desplegar el API REST en Heroku :heavy_check_mark:
+   * URL: https://spring-rest-laptops.herokuapp.com/
+   * Swagger UI URL: https://spring-rest-laptops.herokuapp.com/swagger-ui/
 
-3. Añadir y configurar Spring Security con dos usuarios en memoria 
+3. Añadir y configurar Spring Security con dos usuarios en memoria :heavy_check_mark:
+   * Usuarios (username,password):
+     * user, password
+     * admin, password
 
 
 
