@@ -1,12 +1,12 @@
 ##Ejercicios sesiones 10,11 y 12
 
 1. Empaquetar con maven y ejecutar desde consola :heavy_check_mark:
-   * Perfiles para test y dev 
+   * Perfiles para test y dev :heavy_check_mark:
 
-2. Desplegar el API REST en Heroku :white_check_mark:  
+2. Desplegar el API REST en Heroku   
    * URL:
 
-3. Añadir y configurar Spring Security con dos usuarios en memoria :white_check_mark:
+3. Añadir y configurar Spring Security con dos usuarios en memoria 
 
 
 
